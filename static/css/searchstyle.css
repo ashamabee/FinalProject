@@ -1,0 +1,36 @@
+.banner{
+    width: 100%;
+    display: "block"
+}
+
+.banner > a > .image_banner{
+    width: 100%;
+    display: "block";
+    height: 200px
+}
+
+#ThankYouMessage {
+    color: blue;
+    margin: 150px;
+    padding-top: 20px;
+
+}
+#netflix_image {
+    width: 200px;
+    height: 100px
+}
+#hulu_image {
+    width: 200px;
+    height: 100px
+}
+#prime_image {
+    width: 200px;
+    height: 100px
+}
+#platform_row {
+    margin: 200px;
+    padding-bottom: 100px;
+}
+body {
+    background-color: red;
+  }
