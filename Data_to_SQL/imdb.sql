@@ -18,36 +18,3 @@ CREATE TABLE imdb_movies (
 );
 
 SELECT * FROM imdb_movies;
-
--- title_id                object
--- title                   object
--- year                     int64
--- genre                   object
--- duration                 int64
--- director                object
--- actors                  object
--- description             object
--- avg_vote               float64
--- budget                   int64
--- gross_income_usa         int64
--- gross_income_global      int64
--- votes                    int64
--- user_rating            float64
--- critics_reviews        float64
--- profit                   int64
-
-
--- title_id             object
--- title                object
--- year                  int64
--- genre                object
--- duration              int64
--- director             object
--- actors               object
--- description          object
--- avg_vote            float64
--- budget                int64
--- gross_income_usa      int64
--- user_rating         float64
--- critics_reviews     float64
--- genres               object
