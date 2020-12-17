@@ -9,3 +9,11 @@ Landing Page: Dashboard with graphs/charts about movie data.
 		* Avg. Rating 
 Movie search page with search bar that will give all relevant items as a list of banners to choose from.
 	* Once a single movie is selected, it will display data from omdb api
+To do list 
+
+1 - Landing Page 
+	- Rename existing index html file to different 
+	- Tab visualization, ML (Ashley)
+	- Dropdown list for ML (Mohd,prash)
+
+	- 
