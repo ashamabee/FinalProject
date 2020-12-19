@@ -68,5 +68,13 @@ body {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 50%;
+    height: 50%;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 40%;
   }

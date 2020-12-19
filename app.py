@@ -27,9 +27,9 @@ def SearchPage():
 @app.route("/backhome")
 def ReturnHome():
     return render_template("index.html")
-@app.route("/imdb")
+@app.route("/tab-ml")
 def ImdbHome():
-    return render_template("imdb_search.html")    
+    return render_template("tab-ml-viz.html")    
 
 # Creat new rout for score
 @app.route("/movies_score")
@@ -69,12 +69,6 @@ def movies2():
             all_movies_dict["rotten_tomatoes"] = rotten
             moviesDB.append(all_movies_dict)
     return jsonify(moviesDB)
-# @app.route("/movies_omdb")
-# def movies_omdb():
-#     url = "http://www.omdbapi.com/?apikey=a81ebeb5=avatar"
-#     results = request.get(url)
-#     print(results)
-#     return jsonify(results)
 
 if __name__ == '__main__':
  app.run()

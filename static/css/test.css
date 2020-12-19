@@ -1,23 +1,6 @@
-
-.banner{
-    width: 100%;
-    display: "block"
-}
-.banner > a > .image_banner{
-    width: 100%;
-    display: "block";
-    height: 150px;
-    background-repeat: repeat-x;
-    border: 10px solid green;
-    
-}
-/* body {
-    background-color: red;
-  } */
-  body {
+body {
     font-family: Arial, Helvetica, sans-serif;
-    /* background-image: url("https://static7.depositphotos.com/1238677/724/i/600/depositphotos_7247453-stock-photo-it-analytics-3d-background.jpg"); */
-    background-color: red;
+    background-image: url("https://static7.depositphotos.com/1238677/724/i/600/depositphotos_7247453-stock-photo-it-analytics-3d-background.jpg");
   }
   
   .navbar {
@@ -80,4 +63,4 @@
     display: block;
   }
   
-    
+  

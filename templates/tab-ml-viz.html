@@ -9,8 +9,8 @@
 <body>
 
 <div class="navbar">
-  <a href="#home">Home</a>
-  <a href="#news">Movie Search</a>  
+  <a href="backhome">Movie Dashboard</a>
+  <a href="/search">Movie Search</a>  
   <div class="dropdown">
     <button class="dropbtn">Machine Learning 
       <i class="fa fa-caret-down"></i>
@@ -42,6 +42,18 @@
 </div>
 
 <div class='tableauPlaceholder' id='viz1608345276087' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;MovieTableau_16081766096740&#47;Story1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='MovieTableau_16081766096740&#47;Story1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Mo&#47;MovieTableau_16081766096740&#47;Story1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1608345276087');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1016px';vizElement.style.height='991px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
+<div class="row">
+    <h3 style="color:white" class="center">Machine Learning</h3>
+    <p style="color:white" class="center">We split our data into "Training Data" and "Testing Data". We created a Model that will </p>
+    <div class = "column">
+      <img src='..\images\Training-Testing.png' class="center" >
+    </div>
+    <p style="color:white" class="center">This graph shows the impact that each feature has on the profitability of a movie.</p>
+    <div class = "column">
+      <!-- <img src='/images/Importance.png' class="center" > -->
+      <img src="{{url_for('static', filename='Importance.png')}}align="middle />
+      
+    </div>
+  </div>
 </body>
 </html>
