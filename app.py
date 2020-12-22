@@ -1,14 +1,15 @@
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, request
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
 import numpy as np
 import pandas as pd
+import pickle
 
 # create engine
-connection_string = "admin1:12345@localhost:5432/movie_search_project"
+connection_string = "mario:12345@localhost:5432/movie_search_project"
 engine = create_engine(f'postgresql://{connection_string}')
 connection = engine.connect()
 
@@ -18,6 +19,10 @@ Base.prepare(engine, reflect = True)
 Streaming = Base.classes.movie_search_project
 session = Session(engine)
 app = Flask(__name__)
+
+model = pickle.load(open('static/model/model.sav', 'rb'))
+scaler = pickle.load(open('static/model/scaler.sav', 'rb'))
+
 @app.route("/")
 def Homepage():
     return render_template("index.html")
@@ -42,6 +47,108 @@ def movies_genere():
     movies = pd.read_sql("select genres, count(genres) as count from movie_search_project group by genres", connection)
     return movies.to_json()
 
+@app.route('/predict',methods=['POST'])
+def predict():
+    '''
+    For rendering results on HTML GUI
+    '''
+    # int_features = [int(x) for x in request.form.values()]
+    # final_features = [np.array(int_features)]
+    # prediction = model.predict(final_features)
+    features = []
+    features.append(int(request.form["duration"]))
+    features.append(float(request.form["ave_vote"]))
+    features.append(int(request.form["votes"]))
+
+    features.append(float(request.form["critic_reviews"]))
+    if request.form["movie"]== "Action": 
+        features.append(1)
+    else:
+        features.append(0)
+    
+    if request.form["movie"]== "Adventure": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Animation": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Biography": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Comedy": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Crime": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Drama": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Family": 
+        features.append(1)
+    else:
+        features.append(0)
+
+    if request.form["movie"]== "Fantasy": 
+        features.append(1)
+    else:
+        features.append(0)
+
+    if request.form["movie"]== "Horror": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Music": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Musical": 
+        features.append(1)
+    else:
+        features.append(0)
+
+    if request.form["movie"]== "Mystery": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Romance": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Sci-Fi": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Sport": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Thriller": 
+        features.append(1)
+    else:
+        features.append(0)
+    if request.form["movie"]== "Western": 
+        features.append(1)
+    else:
+        features.append(0)
+
+    print(features)
+
+    features =[features]
+    features_scaled = scaler.transform(features)
+    predictions = model.predict(features_scaled)
+    print(predictions)
+
+
+    output = round(predictions[0][0], 2)
+    
+    return render_template('tab-ml-viz.html', prediction_text='Movie profit should be $ {}'.format(output))
 
 @app.route("/movies")
 def movies():
