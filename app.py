@@ -9,7 +9,7 @@ import pandas as pd
 import pickle
 
 # create engine
-connection_string = "mario:12345@localhost:5432/movie_search_project"
+connection_string = "admin1:12345@localhost:5432/movie_search_project"
 engine = create_engine(f'postgresql://{connection_string}')
 connection = engine.connect()
 
