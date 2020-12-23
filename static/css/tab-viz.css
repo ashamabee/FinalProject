@@ -71,20 +71,25 @@ body {
     width: 50%;
     height: 50%;
   }
+
   .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /* margin-top: 30px;
-    width: 20%; */
   }
+
  h3{
    text-align: center;
    color: white;
    font-weight: bolder;
-   
  }
-    
+
+ p{
+   text-align: center;
+   color: white;
+   font-weight: bolder;
+ }
+
 div {
   resize: both;
   overflow: auto;

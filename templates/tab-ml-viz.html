@@ -36,21 +36,28 @@
 <br>
 
 <div>
-  <h3>This graph shows the Predicted Vs.Actual Profit for each of the movies in testing data </h3>
+  <h3>This graph shows the Predicted Vs. Actual Profit for each of the movies in testing data </h3>
  
   <img style="width: 600px;" src="static/images/Accuracy.png" >
 </div>
 <br>
+<br>
 <div class="row">
-  <h3 style="color:white" class="center">Machine Learning</h3>
+  <h3 style="color:white" class="center">Machine Learning Interactive Profit Predictor</h3>
+  <p style="color:white">Please enter target values for your movie in order to have our model predict the profit that you will make.</p>
+
+  <br>
 
   <form action="{{ url_for('predict')}}"method="post">
-    <input type="text" name="duration" placeholder="Duration" required="required" />
-      <input type="text" name="critic_reviews" placeholder="Critic Reviews" required="required" />
-  <input type="text" name="ave_vote" placeholder="Average Vote" required="required" />
-  <input type="text" name="votes" placeholder="Votes" required="required" />
-
-  <select name = "movie">
+    <input type="text" name="duration" placeholder="Duration (minutes)" required="required" class="center"/>
+    <br>
+      <input type="text" name="critic_reviews" placeholder="# of Critic Reviews" required="required" class="center"/>
+      <br>
+  <input type="text" name="ave_vote" placeholder="Average Vote (1-10)" required="required" class="center"/>
+  <br>
+  <input type="text" name="votes" placeholder="# of Votes" required="required" class="center"/>
+  <br>
+  <select name = "movie" class="center">
   <option value ="Action">Action</option>
   <option value="Adventure">Adventure</option>
   <option value="Animation">Animation</option>
@@ -70,8 +77,8 @@
   <option value="Thriller">Thriller</option>
   <option value="Western">Western</option>
 </select>
-
-  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+<br>
+  <button type="submit" class="center">Predict</button>
   </form>
 
  <br>
