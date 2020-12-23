@@ -18,64 +18,65 @@
 <br>
 
 
-<!-- <p style="color:white" class="center">This graph shows the impact that each feature has on the profitability of a movie.</p> -->
-<h3 style="color:white" align-items: center>This graph shows the impact that each feature has on the profitability of a movie </h3>
 
 <br>
-  <figure class="tableauPlaceholder" style="display:flex">
-    <img style="width:600px" src='static/images/Training-Testing.png'/>
-    <img style="width:600px" src="static/images/importance.png" />
-    <!-- <figcaption>Caption describing these two images.</figcaption> -->
-</figure>
-
-
-
+  
 </div>
 
-
+<div>
+  <h3>We split our data into "Training Data" and "Testing Data". </h3>
+  
+  <img style="width: 600px;" src='static/images/Training-Testing.png'>
+</div>
+<div>
+  <h3>This graph shows the impact that each feature has on the profitability of a movie</h3>
+ 
+  <img style="width: 600px;" src="static/images/importance.png" >
+</div>
+<br>
 
 <div class="row">
-    <h3 style="color:white" class="center">Machine Learning</h3>
+  <h3 style="color:white" class="center">Machine Learning</h3>
 
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="duration" placeholder="Duration" required="required" />
-        <input type="text" name="critic_reviews" placeholder="Critic Reviews" required="required" />
-		<input type="text" name="ave_vote" placeholder="Average Vote" required="required" />
-    <input type="text" name="votes" placeholder="Votes" required="required" />
+  <form action="{{ url_for('predict')}}"method="post">
+    <input type="text" name="duration" placeholder="Duration" required="required" />
+      <input type="text" name="critic_reviews" placeholder="Critic Reviews" required="required" />
+  <input type="text" name="ave_vote" placeholder="Average Vote" required="required" />
+  <input type="text" name="votes" placeholder="Votes" required="required" />
 
-    <select name = "movie">
-    <option value ="Action">Action</option>
-    <option value="Adventure">Adventure</option>
-    <option value="Animation">Animation</option>
-    <option value="Biography">Biography</option>
-    <option value="Comedy">Comedy</option>
-    <option value="Crime">Crime</option>
-    <option value="Drama">Drama</option>
-    <option value="Family">Family</option>
-    <option value="Fantasy">Fantasy</option>
-    <option value="Horror">Horror</option>
-    <option value="Music">Music</option>
-    <option value="Musical">Musical</option>
-    <option value="Mystery">Mystery</option>
-    <option value="Romance">Romance</option>
-    <option value="Sci-Fi">Sci-Fi</option>
-    <option value="Sport">Sport</option>
-    <option value="Thriller">Thriller</option>
-    <option value="Western">Western</option>
-  </select>
+  <select name = "movie">
+  <option value ="Action">Action</option>
+  <option value="Adventure">Adventure</option>
+  <option value="Animation">Animation</option>
+  <option value="Biography">Biography</option>
+  <option value="Comedy">Comedy</option>
+  <option value="Crime">Crime</option>
+  <option value="Drama">Drama</option>
+  <option value="Family">Family</option>
+  <option value="Fantasy">Fantasy</option>
+  <option value="Horror">Horror</option>
+  <option value="Music">Music</option>
+  <option value="Musical">Musical</option>
+  <option value="Mystery">Mystery</option>
+  <option value="Romance">Romance</option>
+  <option value="Sci-Fi">Sci-Fi</option>
+  <option value="Sport">Sport</option>
+  <option value="Thriller">Thriller</option>
+  <option value="Western">Western</option>
+</select>
 
-    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
+  <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+  </form>
 
-   <br>
-   <br>
-   
-   <p style="color:white" class="center">
-   {{ prediction_text }}
-  </p>
-    <p style="color:white" class="center">We split our data into "Training Data" and "Testing Data". We created a Model that will </p>
-    
-    
-  </div>
+ <br>
+ <br>
+ 
+ <p style="color:white" class="center">
+ {{ prediction_text }}
+</p>
+ <br>
+ <br> 
+</div>
+ 
 </body>
 </html>
